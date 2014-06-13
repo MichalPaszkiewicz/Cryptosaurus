@@ -6,6 +6,20 @@ using System.Web.Mvc;
 
 namespace Cryptosaurus.Controllers
 {
+    public class CryptoController : Controller
+    {
+        public ActionResult Index()
+        {
+            return View("Vigenere");
+        }
+
+        public ActionResult Vigenere()
+        {
+            return View();
+        }
+    }
+
+
     public class HomeController : Controller
     {
         public ActionResult Index()
