@@ -2,9 +2,9 @@
     var filteredKey = filterKey(key);
 
     if (isEncrypt) {
-        vigenereEncode(text, filteredKey);
+        return vigenereEncode(text, filteredKey);
     } else {
-        vigenereDecode(text, filteredKey);
+        return vigenereDecode(text, filteredKey);
     }
 }
 
@@ -32,6 +32,8 @@ function vigenereDecode(text, key) {
     for (var i = 0; i < key.length; i++) {
         key[i] = (26 - key[i]) % 26;
     }
+
+    return vigenereEncode(text, key);
 }
 
 function crypt(input, key) {

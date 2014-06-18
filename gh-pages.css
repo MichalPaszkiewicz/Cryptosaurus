@@ -1,0 +1,33 @@
+﻿body {
+  text-align: center;
+  background: black;
+  color: white;
+}
+.main-container {
+  max-width: 1000px;
+  margin: auto;
+}
+.main-container h1,
+.main-container h2 {
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.main-container .container {
+  display: inline-block;
+  margin: 10px;
+}
+.main-container .container textarea {
+  height: 200px;
+  width: 300px;
+  font-family: 'Lucida Console';
+  line-height: 18px;
+}
+.main-container .button-container {
+  clear: both;
+  margin: auto;
+}
+.main-container button {
+  min-height: 80px;
+  min-width: 200px;
+}
+/*# sourceMappingURL=gh-pages.css.map */
