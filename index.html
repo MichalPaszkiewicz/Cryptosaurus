@@ -7,53 +7,17 @@
 </head>
 <body>
     <div class="main-container">
-        <h1>Vigenere encoder</h1>
+        <h1>Cryptosaurus</h1>
+        <h3>Please select a method:</h3>
 
-        <div class="input-container container">
-            <h2>Input</h2>
-            <textarea class="input"></textarea>
-        </div>
+        <a href="/vigenere.html">Vigenere encoder/ decoder</a>
 
-        <div class="key-container container">
-            <h2>Key</h2>
-            <textarea class="key"></textarea>
-        </div>
-
-        <div class="output-container container">
-            <h2>Output</h2>
-            <textarea class="output"></textarea>
-        </div>
-
-        <div class="button-container container">
-            <button onclick="encode()">Vigenere encode</button>
-            <button onclick="decode()">Vigenere decode</button>
-        </div>
-
-        <div style="clear:both"></div>
+        <div class="push"></div>
+    </div>
+    <div class="footer">
+        <a href="http://michalpaszkiewicz.github.io/">Back to main page</a>
     </div>
 
-
-    <script type="text/javascript" src="Scripts/Custom%20scripts/Vigenere.js"></script>
-    <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js"></script>
-    <script>
-        function encode() {
-            var input = $(".input");
-            var key = $(".key");
-            var output = $(".output");
-
-            output.val(vigenere(input.val(), key.val(), true));
-        }
-
-        function decode() {
-            var input = $(".input");
-            var key = $(".key");
-            var output = $(".output");
-
-            output.val(vigenere(input.val(), key.val(), false));
-        }
-    </script>
-
-    <script type=""></script>
 </body>
 
 </html>
