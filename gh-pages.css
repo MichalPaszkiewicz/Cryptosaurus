@@ -1,16 +1,30 @@
-﻿body {
+﻿html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
   text-align: center;
   background: black;
   color: white;
 }
+a {
+  color: white;
+  text-transform: uppercase;
+}
 .main-container {
   max-width: 1000px;
   margin: auto;
+  min-height: 100%;
 }
 .main-container h1,
 .main-container h2 {
   text-transform: uppercase;
   font-weight: 100;
+  padding-top: 20px;
+  margin-top: 0;
 }
 .main-container .container {
   display: inline-block;
@@ -29,5 +43,14 @@
 .main-container button {
   min-height: 80px;
   min-width: 200px;
+}
+.push,
+.footer {
+  height: 80px;
+}
+.footer {
+  position: relative;
+  margin-top: -80px;
+  overflow: hidden;
 }
 /*# sourceMappingURL=gh-pages.css.map */
