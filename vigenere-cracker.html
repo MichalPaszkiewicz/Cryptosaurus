@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Cryptosaurus</title>
+    <link href="gh-pages.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Vigenere encoder</h1>
+
+        <div class="input-container container">
+            <h2>Input</h2>
+            <textarea class="input"></textarea>
+        </div>
+
+        <div class="length-container container">
+            <h2>Length</h2>
+            <textarea class="length"></textarea>
+        </div>
+
+        <div class="output-container container">
+            <h2>Output</h2>
+            <textarea class="output"></textarea>
+        </div>
+
+        <div class="button-container container">
+            <button onclick="crack()">Crack the code!</button>
+        </div>
+
+        <div style="clear:both"></div>
+        <div class="push"></div>
+    </div>
+    <div class="footer">
+        <a href="http://michalpaszkiewicz.github.io/">Back to main page</a>
+    </div>
+
+
+    <script type="text/javascript" src="Scripts/Custom scripts/VigenereCracker.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js"></script>
+    <script>
+        function crack() {
+            var input = $(".input");
+            var length = $(".key");
+            var output = $(".output");
+
+            $(output).val(crackVigenereCipher(input.val(), key.val()));
+        }
+    </script>
+
+    <script type=""></script>
+</body>
+
+</html>
