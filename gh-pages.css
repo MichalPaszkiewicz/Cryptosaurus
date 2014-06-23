@@ -13,6 +13,8 @@ body {
 a {
   color: white;
   text-transform: uppercase;
+  clear: both;
+  display: block;
 }
 .main-container {
   max-width: 1000px;
