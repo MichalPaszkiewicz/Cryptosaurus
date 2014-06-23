@@ -4,11 +4,11 @@
 
     if(isEncrypt)
     {
-        vigenereEncode(text, filteredKey);
+        return vigenereEncode(text, filteredKey);
     }
     else
     {
-        vigenereDecode(text, filteredKey);
+        return vigenereDecode(text, filteredKey);
     }
 }
 
