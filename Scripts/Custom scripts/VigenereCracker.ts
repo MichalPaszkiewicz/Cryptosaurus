@@ -12,7 +12,7 @@ function getWords() {
 
     var removeCarriageReturn = returnValue;
 
-    var words = removeCarriageReturn.split("\r\n");
+    var words = removeCarriageReturn.split("\n");
 
     var len = words.length;
 
