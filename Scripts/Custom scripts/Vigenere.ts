@@ -41,6 +41,7 @@ function vigenereDecode(text, key) {
         key[i] = (26 - key[i]) % 26;
     }
 
+    return vigenereEncode(text, key);
 }
 
 function crypt(input, key) {
