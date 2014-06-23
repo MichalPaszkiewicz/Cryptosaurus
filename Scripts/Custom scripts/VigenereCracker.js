@@ -4,7 +4,7 @@
 
 function getWords() {
     var request = new XMLHttpRequest();
-    request.open("GET", "Scripts/Custom scripts/WordList/brit-a-z.txt", false);
+    request.open("GET", "http://www.michalpaszkiewicz.co.uk/Cryptosaurus/Scripts/Custom%20scripts/WordList/brit-a-z.txt", false);
     request.send(null);
     var returnValue = request.responseText.replace(" ", "");
 
