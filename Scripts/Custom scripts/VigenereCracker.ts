@@ -164,6 +164,8 @@ function getSmallestResidualError(text: string) {
 
 function crackTheCode(text: string, keyLength) {
 
+    text = text.replace("\r","").replace("\n","");
+
     var key = "";
 
     for (var i = 0; i < keyLength; i++) {
