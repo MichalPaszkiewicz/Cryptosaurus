@@ -63,9 +63,16 @@ var englishLetterFrequencies = {
 function getEveryNthCharToString(text: string, start, keyLength) {
     var output = "";
 
-    for (var i = start; i < text.length; i = i + keyLength) {
-        var currentText = text[i];
-        output = output + currentText;
+    var regex = /[a-zA-z]+$/;
+
+    for (var i = start, j = 0; i < text.length; i++) {
+        if (regex.test(text[i])) {
+            if (j % parseInt(keyLength) == 0) {
+                var currentText = text[i];
+                output = output + currentText;
+            }
+            j++;
+        }
     }
 
     return output;
@@ -76,7 +83,7 @@ function createDictionaryOfChars(text: string) {
 
     var totalLength = text.length;
 
-    var regex = /^[a-z]+$/;
+    var regex = /[a-z]+$/;
 
     for (var i = 0; i < totalLength; i++) {
         var letter = text[i].toLowerCase();
@@ -97,20 +104,31 @@ function createDictionaryOfChars(text: string) {
 //String.fromCharCode(97) + 25
 //String.fromCharCode(65) + 25
 
-function singleResidualError(dictionary, letter :string) {
+function singleResidualError(dictionary, letter :string, maxValue) {
     var equivalentLetter = letter.toUpperCase();
 
-    return (dictionary[letter] - englishLetterFrequencies[equivalentLetter]) * (dictionary[letter] - englishLetterFrequencies[equivalentLetter]);
+    var comparisonConstant = maxValue / englishLetterFrequencies.max_val;
+
+    var difference = dictionary[letter] * comparisonConstant - englishLetterFrequencies[equivalentLetter];
+
+    return difference * difference;
 }
 
 function getResidualError(text :string) {
 
     var dictionary = createDictionaryOfChars(text);
 
+    var maxValue = 0;
+    for (var letter in dictionary) {
+        if (dictionary[letter] > maxValue) {
+            maxValue = dictionary[letter];
+        }
+    }
+
     var residualError = 0;
 
     for (var letter in dictionary) {
-        residualError = residualError + singleResidualError(dictionary, letter);
+        residualError = residualError + singleResidualError(dictionary, letter, maxValue);
     }
 
     return residualError;
@@ -122,6 +140,8 @@ function getSmallestResidualError(text: string) {
 
     var bestMatch = "";
     var bestMatchResidualError = 100000;
+
+    console.log("String: " + text);
 
     for (var i = 0; i < 26; i++) {
         var decodeLetter = String.fromCharCode(numberToLowerA + i);
@@ -135,6 +155,9 @@ function getSmallestResidualError(text: string) {
             bestMatchResidualError = newResidualError;
         }
     }
+
+    console.log(" Decode letter: " + bestMatch + " New residual error: " + bestMatchResidualError);
+    console.log("Decoded text: " + vigenere(text, bestMatch, false));
 
     return bestMatch;
 }
