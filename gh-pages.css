@@ -11,10 +11,16 @@ body {
   color: white;
 }
 a {
-  color: white;
-  text-transform: uppercase;
-  clear: both;
-  display: block;
+    color: #fff;
+    text-transform: uppercase;
+    clear: both;
+    display: block;
+    text-decoration: none;
+    background: rgb(53, 49, 49);
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 500px;
 }
 .main-container {
   max-width: 1000px;
